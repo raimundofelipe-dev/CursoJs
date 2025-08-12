@@ -9,10 +9,11 @@
     <h1>Bem vindo!</h1>
     <p>Este é um curso em Js</p>
     <script>
-        var n1 = Number.parseInt(window.prompt('Digite um número: '))
-        var n2 = Number.parseInt(window.prompt('Digite um outro número: '))
+        var n1 = Number(window.prompt('Digite um número: '))
+        var n2 = Number(window.prompt('Digite um outro número: '))
         var s = n1 + n2
         window.alert('a soma dos numeros é ' + s)
+        //window.alert(`a soma dos numeros de ${n1} e ${n2} é igual a ${s}`)
     </script>
 </body>
 </html>
