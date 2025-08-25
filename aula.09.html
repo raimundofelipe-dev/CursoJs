@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detran</title>
+    <style>
+      h1 {
+        background-color: rgb(109, 109, 252);
+        color: aliceblue;
+        text-align: center;
+        border-radius: 10px;
+      }
+      input[type="number"] {
+        width: 80px;
+        padding: 5px;
+        border: 2px solid #009688;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      input[type="button"] {
+        background: #009688;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="button"]:hover {
+        background: #00796b;
+      }
+      body {
+        font: 20px arial;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sistemas de Mutas</h1>
+    Velocidade do carro:<input type="Number" id="n1" />Km/h
+    <input type="button" value="Verificar" onclick="calcular()" />
+    <div id="res"></div>
+    <script>
+      function calcular() {
+        var vel = Number(document.getElementById("n1").value);
+        var res = document.querySelector("div#res");
+        res.innerHTML = `<p><strong>A velocidade atual é de: ${vel}Km/h</strong></p>`;
+        if (vel > 60) {
+          res.innerHTML +=
+            "Você esta cima da velociade. <strong>ESTA MULTADO</strong>!";
+        }
+
+        res.innerHTML += "<p>Dirija sempre com cinto de segurança.</p>";
+      }
+    </script>
+  </body>
+</html>
