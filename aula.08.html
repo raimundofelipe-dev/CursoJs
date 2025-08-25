@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOMANDO</title>
+    <style>
+      body {
+        text-align: center;
+        
+      }
+      div{
+        background-color: aquamarine;
+        width: 300px;
+        padding: 20px;
+        margin: 50px auto;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Mini Soma</h1>
+      <input type="Number" id="txtn1">
+      <p>+</p>
+      <input type="Number" id="txtn2">
+      <p>=</p>
+      <input type="button" value="Calcule" onclick="somar()">
+      <p id="res">Resultado</p> 
+    </div>
+    <script>
+        function somar(){
+            var n1 = Number(document.getElementById('txtn1').value)
+            var n2 = Number(document.getElementById('txtn2').value)
+            var s = n1 + n2 
+            document.getElementById('res').innerText= `A soma dos numeros é ${s} `
+        }
+    </script>
+  </body>
+</html>
