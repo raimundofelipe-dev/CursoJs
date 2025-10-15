@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lan house</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #title{
+            width: 70%;
+            padding: 0 20px;
+            background: black;
+            color: aliceblue;
+            border-top-right-radius: 20px;
+        }
+        form{
+            width: 70%;
+            background-color: rgba(0, 26, 255, 0.493);
+            padding: 20px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 20px ;
+        
+        }
+        input {
+           
+             border: 2px solid rgba(0, 0, 80, 0.4);
+            border-radius: 10px;
+            padding: 5px;
+            outline: none;
+        }
+        .b{
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div id="title">
+            <h1>Lan House</h1>
+        </div>
+        <form>
+            <div>
+                <label for="vuso">Valor por cada 15 minutos de uso:</label>
+                <input type="text" inputmode="decimal" name="vuso" id="vuso" required>
+            </div>
+            <div>
+                <label for="tuso">Tempo de uso de um cliente</label>
+                <input type="text" inputmode="decimal" name="tuso" id="tuso" required>
+            </div>
+            <input type="submit" value="Calcular Valor a Pagar" class="b">
+        </form>
+        <h2></h2>
+    </main>
+</body>
+<script>
+    const frm = document.querySelector("form");
+    const res = document.querySelector("h2");
+
+    frm.addEventListener("submit", (e) => {
+        const vu = Number(document.getElementById("vuso").value)
+        const tu = Number(document.getElementById("tuso").value) 
+
+        const valorpormin = vu / 15
+        const valortt = tu * valorpormin
+        res.innerText = `Valor a Pagar: ${valortt.toFixed(2)}`
+        e.preventDefault()
+    });
+
+</script>
+</html>

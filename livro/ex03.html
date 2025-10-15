@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Higiene - Supermercado JS</title>
+</head>
+<body>
+  <main>
+    <h1>Supermercado JS</h1>
+    <form id="promoForm">
+      <label for="produto">Produto</label>
+      <input id="produto" type="text"/>
+
+      <label for="preco">Preço (R$)</label>
+      <input id="preco" type="number"/>
+
+      <input type="submit" value="Ver Promoção" />
+    </form>
+
+    <h2 id="saidaTitulo"></h2>
+    <h3 id="saidaDetalhe"></h3>
+  </main>
+
+  <script>
+    const frm = document.querySelector("form");
+    const res = document.getElementById("saidaTitulo")
+    const comple = document.getElementById('saidaDetalhe')
+
+    frm.addEventListener('submit', (e) => {
+      const produto = document.getElementById('produto').value
+      const preco = Number(document.getElementById('preco').value)
+
+   
+      const promocao = (preco * 2) + preco / 2
+  
+
+      res.innerText = `${produto} - Promoção : Leve três por ${promocao.toFixed(2)} R$`;
+      comple.innerText = 'O 3 terceiro produto sair por metade do preço';
+      e.preventDefault(); 
+    });
+  </script>
+</body>
+</html>
