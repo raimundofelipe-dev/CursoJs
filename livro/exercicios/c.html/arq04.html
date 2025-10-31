@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Programa de Aprovação</h1>
+    <form>
+      <label for="aluno">Nome do Aluno</label>
+      <input type="text" name="aluno" id="aluno" />
+
+      <label for="n1">Nota 1:</label>
+      <input type="number" name="n1" id="n1" />
+
+      <label for="n2">Nota 2:</label>
+      <input type="number" name="n2" id="n2" />
+
+      <input type="submit" value="Calcule sua Média" />
+    </form>
+    <h2></h2>
+    <h3></h3>
+
+    <script>
+      const form = document.querySelector("form");
+      const resp1 = document.querySelector("h2");
+      const resp2 = document.querySelector("h3");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const a = document.getElementById("aluno").value;
+        const nota1 = Number(document.getElementById("n1").value);
+        const nota2 = Number(document.getElementById("n2").value);
+
+        const total = (nota1 + nota2) / 2;
+        resp1.innerText = `Media das Notas: ${total}`;
+
+        if (total >= 7) {
+          resp2.innerText = `Parabéns ${a}! Você foi aprovado(a)`;
+          resp2.style.color = "green";
+          return;
+        }
+        resp2.innerText = `Ops ${a}...Você foi reprovada!`;
+        resp2.style.color = `red`;
+      });
+    </script>
+  </body>
+</html>
