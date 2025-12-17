@@ -37,10 +37,12 @@
     </style>
   </head>
   <body>
+
     <h1>Sistemas de Mutas</h1>
     Velocidade do carro:<input type="Number" id="n1" />Km/h
     <input type="button" value="Verificar" onclick="calcular()" />
     <div id="res"></div>
+
     <script>
       function calcular() {
         var vel = Number(document.getElementById("n1").value);
@@ -48,11 +50,12 @@
         res.innerHTML = `<p><strong>A velocidade atual é de: ${vel}Km/h</strong></p>`;
         if (vel > 60) {
           res.innerHTML +=
-            "Você esta cima da velociade. <strong>ESTA MULTADO</strong>!";
+            "Você esta cima da velocidade. <strong>ESTA MULTADO</strong>!";
         }
 
         res.innerHTML += "<p>Dirija sempre com cinto de segurança.</p>";
       }
     </script>
+
   </body>
 </html>

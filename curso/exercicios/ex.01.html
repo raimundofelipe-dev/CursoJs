@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        h1{
+            color: aliceblue;
+            text-align: center;
+        }
+        section{
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 10px;
+            text-align: center;
+            background-color: aliceblue;
+            margin: auto;
+            width: 500px;
+        }
+        footer{
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body onload="carregar()">
+    <header>
+      <h1>Hora do Dia</h1>
+    </header>
+
+    <section>
+      <div id="msg">
+        <p></p>
+      </div>
+      <div id="foto">
+        <img
+          id="im"
+          src="foto/fotodia-fotor-2025111912819.png"
+          alt="Foto do dia"
+        />
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Raimundo Felipe</p>
+    </footer>
+
+    <script>
+      function carregar() {
+        const img = document.getElementById("im");
+        const res = document.getElementById("msg");
+
+        const data = new Date()
+        const horas = data.getHours()
+        
+        res.innerText = 'Agora são '  + horas 
+
+        if (horas >= 0 && horas <= 12){
+           img.src = 'foto/fotodia-fotor-2025111912819.png'
+           document.body.style.background = '#e2cd9f'
+        } else if (horas >= 13 && horas < 18){
+            img.src = 'foto/fototarde-fotor-2025111912105.png'
+            document.body.style.background = '#b9846f'
+        } else {
+            img.src = 'foto/fotonoite-fotor-20251119121113.png'
+            document.body.style.background = '#515154'
+        }
+      }
+    </script>
+  </body>
+</html>
